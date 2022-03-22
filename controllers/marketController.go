@@ -249,7 +249,6 @@ func getEmail(token string) (email string) {
 // sendPaymentRequest is a dummy method that waits for 2 seconds and has a 50% chance of success
 func sendPaymentRequest() (success bool) {
 	randNum := rand.Int()
-	fmt.Println(randNum)
 
 	time.Sleep(2 * time.Second)
 
