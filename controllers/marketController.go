@@ -3,13 +3,15 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
-	"gorm.io/gorm"
 	"math/rand"
 	"net/http"
+	"time"
+
 	"simple-api/database"
 	"simple-api/models"
-	"time"
+
+	"github.com/dgrijalva/jwt-go"
+	"gorm.io/gorm"
 )
 
 func AddToCart(w http.ResponseWriter, r *http.Request) {
@@ -244,7 +246,7 @@ func getEmail(token string) (email string) {
 	return claims.Issuer
 }
 
-// sendPaymentRequest is a dummy method that waits for 2 seconds and TODO
+// sendPaymentRequest is a dummy method that waits for 2 seconds and has a 50% chance of success
 func sendPaymentRequest() (success bool) {
 	randNum := rand.Int()
 	fmt.Println(randNum)

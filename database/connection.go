@@ -1,17 +1,18 @@
 package database
 
 import (
+	"log"
+
+	"simple-api/models"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"log"
-	"simple-api/models"
 )
 
 var DB *gorm.DB
 
-func SetupConnection()  {
-	connection, err := gorm.Open(mysql.Open("sammy:Password@123@/simple_api"), &gorm.Config{})
-
+func SetupConnection(dbDns string)  {
+	connection, err := gorm.Open(mysql.Open(dbDns), &gorm.Config{})
 	if err != nil {
 		panic("could not connect to the database")
 	}

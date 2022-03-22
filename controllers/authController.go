@@ -2,13 +2,14 @@ package controllers
 
 import (
 	"encoding/json"
-	"golang.org/x/crypto/bcrypt"
 	"net/http"
+	"time"
 
-	"github.com/dgrijalva/jwt-go"
 	"simple-api/database"
 	"simple-api/models"
-	"time"
+
+	"github.com/dgrijalva/jwt-go"
+	"golang.org/x/crypto/bcrypt"
 )
 
 const (
